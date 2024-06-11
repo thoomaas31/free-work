@@ -6,17 +6,23 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "start:migrate:prod": "node server.js",
+    "lint": "next lint",
+    "docker:dev": "npm run dev",
+    "docker:compose:dev": "docker-compose down && docker compose up -d --build",
+    "docker:compose:prod": "docker-compose down && docker compose -f docker-compose.prod.yml up -d --build"
   },
   "dependencies": {
+    "@prisma/client": "^5.15.0",
+    "next": "14.2.3",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.3"
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
     "eslint": "^8",
-    "eslint-config-next": "14.2.3"
+    "eslint-config-next": "14.2.3",
+    "postcss": "^8",
+    "prisma": "^5.15.0",
+    "tailwindcss": "^3.4.1"
   }
 }
